@@ -181,6 +181,17 @@ hunter_add_version(
     04f570acbe0beb762e588ad3de292d0328a79c64
 )
 
+hunter_add_version(
+    PACKAGE_NAME
+    Boost
+    VERSION
+    "1.74.0-p0"
+    URL
+    "https://github.com/Bjoe/hunter-boost/archive/hunter-1.74.0.zip"
+    SHA1
+    1c452c093b183c556f2b41a0b056c2097f080cbc
+)
+
 # up until 1.63 sourcefourge was used
 set(_hunter_boost_base_url "https://downloads.sourceforge.net/project/boost/boost/")
 hunter_add_version(
