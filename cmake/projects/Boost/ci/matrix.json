@@ -483,4 +483,3 @@
 { "example": "Boost-thread", "toolchain": "msys-cxx17",                                      "os": "windows-2016", "python": "3.8", "script": "build.cmd" }
 
 ]
-    
