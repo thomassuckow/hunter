@@ -98,7 +98,7 @@ config file (``boost/config/user.hpp``):
   by the boost project.
 
   Since boost version 1.70.0, the boost project provide a well maintained package 
-  configuration file for use with find_package's config mode. As minimum required cmake 
+  configuration file for use with find_package's config mode. As minimum required CMake 
   version you need 3.3.
 
   See the difference between following example:
