@@ -1,6 +1,3 @@
-# Copyright (c) 2013, Ruslan Baratov
-# All rights reserved.
-
 cmake_minimum_required(VERSION 3.0)
 
 set(Boost_DEBUG ON CACHE BOOLEAN "")
@@ -11,8 +8,8 @@ include("../common.cmake")
 
 project(download-boost)
 
-hunter_add_package(Boost COMPONENTS context fiber)
-find_package(Boost CONFIG REQUIRED context fiber)
+hunter_add_package(Boost COMPONENTS fiber)
+find_package(Boost CONFIG REQUIRED fiber)
 
 add_executable(foo foo.cpp)
-target_link_libraries(foo PUBLIC Boost::context Boost::fiber)
+target_link_libraries(foo PUBLIC Boost::fiber)

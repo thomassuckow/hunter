@@ -1,6 +1,3 @@
-# Copyright (c) 2013, Ruslan Baratov
-# All rights reserved.
-
 cmake_minimum_required(VERSION 3.0)
 
 set(Boost_DEBUG ON CACHE BOOLEAN "")
@@ -11,8 +8,8 @@ include("../common.cmake")
 
 project(download-boost)
 
-hunter_add_package(Boost COMPONENTS system thread)
-find_package(Boost CONFIG REQUIRED system thread)
+hunter_add_package(Boost COMPONENTS thread)
+find_package(Boost CONFIG REQUIRED thread)
 
 add_executable(foo foo.cpp)
-target_link_libraries(foo PUBLIC Boost::system Boost::thread)
+target_link_libraries(foo PUBLIC Boost::thread)

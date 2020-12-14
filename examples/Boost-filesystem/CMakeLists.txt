@@ -1,6 +1,3 @@
-# Copyright (c) 2013-2015, Ruslan Baratov
-# All rights reserved.
-
 cmake_minimum_required(VERSION 3.0)
 
 set(Boost_DEBUG ON CACHE BOOLEAN "")
@@ -12,10 +9,10 @@ include("../common.cmake")
 project(download-boost)
 
 # download boost
-hunter_add_package(Boost COMPONENTS system filesystem)
+hunter_add_package(Boost COMPONENTS filesystem)
 
 # now boost can be used
-find_package(Boost CONFIG REQUIRED system filesystem)
+find_package(Boost CONFIG REQUIRED filesystem)
 
 if(ANDROID)
   string(COMPARE EQUAL "${CMAKE_ANDROID_NDK}" "" is_empty)
@@ -34,10 +31,8 @@ endif()
 
 target_link_libraries(
     foo
+    PUBLIC
     Boost::filesystem
-    Boost::system # Should be last
-        # Boost 1.66.0, Linux, Clang with -stdlib=libstdc++:
-        # * https://travis-ci.org/ingenue/hunter/jobs/318140416#L2674
 )
 
 if(ANDROID)

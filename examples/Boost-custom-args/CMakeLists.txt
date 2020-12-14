@@ -1,6 +1,3 @@
-# Copyright (c) 2013-2017, Ruslan Baratov
-# All rights reserved.
-
 cmake_minimum_required(VERSION 3.0)
 set(TESTING_CONFIG_OPT FILEPATH ${CMAKE_CURRENT_LIST_DIR}/config.cmake)
 
@@ -14,4 +11,4 @@ hunter_add_package(Boost)
 find_package(Boost CONFIG REQUIRED)
 
 add_executable(foo foo.cpp)
-target_link_libraries(foo PUBLIC Boost::boost)
+target_link_libraries(foo PUBLIC Boost::headers)

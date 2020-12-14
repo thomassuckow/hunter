@@ -1,6 +1,3 @@
-# Copyright (c) 2013, Ruslan Baratov
-# All rights reserved.
-
 cmake_minimum_required(VERSION 3.0)
 
 set(Boost_DEBUG ON CACHE BOOLEAN "")
@@ -15,7 +12,7 @@ hunter_add_package(Boost)
 find_package(Boost CONFIG REQUIRED)
 
 add_executable(foo foo.cpp)
-target_link_libraries(foo PUBLIC Boost::boost) # Since boost 1.70 you should use Boost::headers as target
+target_link_libraries(foo PUBLIC Boost::headers) # Since boost 1.70 you should use Boost::headers as target
 
 set(project_license "${CMAKE_CURRENT_BINARY_DIR}/LICENSE.txt")
 file(

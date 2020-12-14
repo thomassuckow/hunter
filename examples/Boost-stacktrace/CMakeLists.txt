@@ -1,6 +1,3 @@
-# Copyright (c) 2013-2018, Ruslan Baratov
-# All rights reserved.
-
 cmake_minimum_required(VERSION 3.2)
 
 set(Boost_DEBUG ON CACHE BOOLEAN "")
