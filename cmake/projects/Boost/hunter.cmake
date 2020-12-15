@@ -442,8 +442,7 @@ if(MSVC)
   )
 endif()
 
-if(POLICY CMP0057)
-  cmake_policy(SET CMP0057 NEW) # This is need to use BoostConfig from boost
+if(CMAKE_VERSION VERSION_GREATER_EQUAL 3.3)
   hunter_cmake_args(
     Boost
     CMAKE_ARGS
@@ -462,9 +461,7 @@ if(NOT HUNTER_Boost_VERSION VERSION_LESS 1.72.0)
     string(FIND "${boost_cmake_args}" "USE_CONFIG_FROM_BOOST=ON" use_boost_config)
     string(FIND "${boost_cmake_args}" "BOOST_BUILD_DYNAMIC_VSRUNTIME=NO" boost_static_runtime)
     if(use_boost_config GREATER -1)
-        if(POLICY CMP0057)
-            cmake_policy(SET CMP0057 NEW) # This is need to use BoostConfig from boost
-        else()
+        if(CMAKE_VERSION VERSION_LESS 3.3)
             message(FATAL_ERROR "You need at least a cmake version 3.3 to use BoostConfig from Boost otherwise set USE_CONFIG_FROM_BOOST to OFF")
         endif()
         if(boost_shared LESS 0)

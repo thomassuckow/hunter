@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.2)
+cmake_minimum_required(VERSION 3.3)
 option(HUNTER_BUILD_SHARED_LIBS "..." ON)
 
 set(Boost_DEBUG ON CACHE BOOLEAN "")
