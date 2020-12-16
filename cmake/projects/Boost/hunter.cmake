@@ -440,7 +440,7 @@ if(MSVC)
     CMAKE_ARGS
       BOOST_BUILD_DYNAMIC_VSRUNTIME=${_hunter_vs_md}
   )
-cmake_print_variables(BOOST_BUILD_DYNAMIC_VSRUNTIME) # TODO Remove me!!
+cmake_print_variables(_hunter_vs_md BOOST_BUILD_DYNAMIC_VSRUNTIME) # TODO Remove me!!
 endif()
 
 if(NOT HUNTER_Boost_VERSION VERSION_LESS 1.72.0 AND CMAKE_VERSION VERSION_GREATER_EQUAL 3.3)
