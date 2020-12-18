@@ -436,7 +436,7 @@ include(CMakePrintHelpers) # TODO Remove me!!
 if(MSVC)
   hunter_check_toolchain_definition(NAME "_DLL" DEFINED _hunter_vs_md)
   set(ADDITIONAL_MSVC_CMAKE_ARGS
-      BOOST_BUILD_DYNAMIC_VSRUNTIME=${_hunter_vs_md}
+      "BOOST_BUILD_DYNAMIC_VSRUNTIME=${_hunter_vs_md}"
   )
 cmake_print_variables(_hunter_vs_md BOOST_BUILD_DYNAMIC_VSRUNTIME) # TODO Remove me!!
 endif()
