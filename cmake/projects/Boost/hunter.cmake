@@ -435,9 +435,7 @@ hunter_add_version(
 include(CMakePrintHelpers) # TODO Remove me!!
 if(MSVC)
   hunter_check_toolchain_definition(NAME "_DLL" DEFINED _hunter_vs_md)
-  hunter_cmake_args(
-    Boost
-    CMAKE_ARGS
+  set(ADDITIONAL_MSVC_CMAKE_ARGS
       BOOST_BUILD_DYNAMIC_VSRUNTIME=${_hunter_vs_md}
   )
 cmake_print_variables(_hunter_vs_md BOOST_BUILD_DYNAMIC_VSRUNTIME) # TODO Remove me!!
@@ -448,6 +446,7 @@ if( (NOT HUNTER_Boost_VERSION VERSION_LESS 1.72.0) AND (CMAKE_VERSION VERSION_GR
     Boost
     CMAKE_ARGS
         USE_CONFIG_FROM_BOOST=ON
+        ${ADDITIONAL_MSVC_CMAKE_ARGS}
     )
 endif()
 
