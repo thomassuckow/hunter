@@ -454,7 +454,7 @@ hunter_pick_scheme(DEFAULT url_sha1_boost)
 hunter_cacheable(Boost)
 hunter_download(PACKAGE_NAME Boost PACKAGE_INTERNAL_DEPS_ID "48")
 
-
+# This settings Boost_USE_STATIC_LIBS and Boost_USE_STATIC_RUNTIME are needed to configure via find_package(Boost ....) for BoostConfig from boost
 if(NOT HUNTER_Boost_VERSION VERSION_LESS 1.72.0)
     hunter_get_cmake_args(PACKAGE Boost OUT boost_cmake_args)
     cmake_print_variables(boost_cmake_args) # TODO Remove me!!
