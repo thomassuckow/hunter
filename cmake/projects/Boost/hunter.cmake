@@ -464,6 +464,7 @@ if(NOT HUNTER_Boost_VERSION VERSION_LESS 1.72.0)
         if(CMAKE_VERSION VERSION_LESS 3.3)
             message(FATAL_ERROR "You need at least a cmake version 3.3 to use BoostConfig from Boost otherwise set USE_CONFIG_FROM_BOOST to OFF")
         endif()
+        cmake_policy(SET CMP0057 NEW) # This is need to use BoostConfig from boost
         if(boost_shared LESS 0)
             option(Boost_USE_STATIC_LIBS "Use of the static libraries" ON)
         else()
